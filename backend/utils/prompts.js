@@ -1,8 +1,45 @@
 export const MODES = {
-  humanize: "Rewrite the following text to sound like a human wrote it. Use varied sentence structures, natural transitions, and avoid common AI 'crutch' words. Keep the user's original idea intact but make the flow feel organic.",
-  professional: "Refine this text for a formal business environment. Focus on clarity, authoritative tone, and polished vocabulary while preserving the user's intent.",
-  academic: "Paraphrase this for a scholarly publication. Use objective language, sophisticated transitions, and ensure it meets academic standards of formal writing.",
-  casual: "Rewrite this in a friendly, conversational tone. Use simple language as if talking to a friend, but don't lose the core point.",
-  creative: "Inject personality and vivid language into this idea. Make it engaging and artistic without changing the underlying message.",
-  shorten: "Condense the text to its absolute essentials. Strip away the fluff while ensuring every key insight from the original idea remains."
+  humanize: `Rewrite the user's text into ONE natural, human-like version. 
+    Instructions:
+    - Avoid repetitive AI sentence structures and "bot-like" vocabulary.
+    - Focus on a conversational yet clear flow.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" explaining how you made it sound more human.`,
+
+  professional: `Rewrite the user's text into ONE polished, professional version suitable for a corporate environment.
+    Instructions:
+    - Use authoritative, clear, and sophisticated language.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" with a bulleted list of the professional adjustments made.`,
+
+  academic: `Rewrite the user's text into ONE high-quality academic version.
+    Instructions:
+    - Use scholarly vocabulary and objective, formal phrasing.
+    - Ensure logical transitions between ideas.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" highlighting the academic terminology and structural changes.`,
+
+  casual: `Rewrite the user's text into ONE friendly, casual version.
+    Instructions:
+    - Use a warm, relaxed tone as if speaking to a friend.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" explaining how the tone was relaxed.`,
+
+  creative: `Rewrite the user's text into ONE engaging, creative version.
+    Instructions:
+    - Use vivid imagery and an expressive, artistic style.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" describing the creative choices made.`,
+
+  shorten: `Rewrite the user's text into ONE concise version.
+    Instructions:
+    - Remove all fluff while retaining 100% of the core meaning.
+    - Provide the paraphrased text first.
+    - After the text, add a separator line "---".
+    - Under the separator, add a section "### Key Improvements" listing what was condensed for brevity.`
 };

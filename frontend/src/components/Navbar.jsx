@@ -21,7 +21,7 @@ export default function Navbar() {
         {/* Links */}
         <div className="flex items-center gap-6">
           <div className="hidden md:flex gap-1 text-sm font-medium">
-            {['Paraphraser', 'Medical Bot', 'History'].map((link) => (
+            {['Paraphraser', 'History'].map((link) => (
               <a
                 key={link}
                 href="#"

@@ -29,7 +29,13 @@ function App() {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(outText);
+    if (!outText) return;
+
+    // Split the text at the separator '---' provided by your updated prompt
+    // This ensures only the paraphrased text is copied, not the improvements list
+    const textToCopy = outText.split('---')[0].trim();
+    
+    navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -66,7 +72,6 @@ function App() {
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-blue-400 bg-size-[200%] animate-gradient">
                 Paraphraser
               </span>
-              {/* Underline glow */}
               <span className="absolute -bottom-1 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/60 to-transparent" />
             </span>
           </h1>
@@ -121,12 +126,10 @@ function App() {
               }
             `}
           >
-            {/* Shimmer sweep on hover */}
             {!loading && inputText && (
               <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
             )}
 
-            {/* Outer glow ring */}
             {!loading && inputText && (
               <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[inset_0_0_20px_rgba(99,102,241,0.15)]" />
             )}
@@ -155,7 +158,6 @@ function App() {
             )}
           </button>
         </div>
-
       </main>
     </div>
   );
